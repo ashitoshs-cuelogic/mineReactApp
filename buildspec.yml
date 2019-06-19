@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+
+  pre_build:
+
+    commands:
+
+      - npm install
+
+  build:
+
+    commands:
+
+      - npm run build
+
+  post_build:
+
+    commands:
+      - aws s3 cp --recursive --acl public-read s3://avengers-docker-eb-1 s3://test-first-pipeline/
