@@ -17,5 +17,4 @@ phases:
   post_build:
 
     commands:
-
-      - aws s3 sync --delete build/ s3://test-first-pipeline --acl public-read
+      - aws s3 cp --recursive --acl public-read s3://avengers-docker-eb-1 s3://test-first-pipeline/
