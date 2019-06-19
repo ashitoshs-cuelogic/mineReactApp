@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+
+  pre_build:
+
+    commands:
+
+      - npm install
+
+  build:
+
+    commands:
+
+      - npm run build
+
+  post_build:
+
+    commands:
+
+      - aws s3 sync --delete build/ s3://www.myreactapp.com --acl public-read
