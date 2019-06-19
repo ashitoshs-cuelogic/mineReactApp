@@ -18,4 +18,4 @@ phases:
 
     commands:
 
-      - aws s3 sync --delete build/ s3://www.myreactapp.com --acl public-read
+      - aws s3 sync --delete build/ s3://test-first-pipeline --acl public-read
